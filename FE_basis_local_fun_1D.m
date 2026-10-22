@@ -48,11 +48,89 @@ if basis_type==101
         end
 
     else
-        warning="wrong input for basis derivative";
+        warning="wrong input for basis index";
 
     end
 
 elseif basis_type==102
+
+    if basis_index==1
+
+        if basis_der_x==0
+
+            result=2*((x-vertices(1))/h)^2-3*((x-vertices(1))/h)+1;
+
+        elseif basis_der_x==1
+
+            result=4*((x-vertices(1))/h)*(1/h)-3/h;
+
+        elseif basis_der_x==2
+
+            result=4/h*(1/h);
+
+        elseif basis_der_x>=3
+
+            result=0;
+
+        else 
+
+            warning="wrong input for basis derivative";
+
+        end
+        
+
+    elseif basis_index==2
+
+        if basis_der_x==0
+
+            result=2*((x-vertices(1))/h)^2-((x-vertices(1))/h);
+
+        elseif basis_der_x==1
+
+            result=4*((x-vertices(1))/h)*(1/h)-1/h;
+
+        elseif basis_der_x==2
+
+            result=4/h*(1/h);
+
+        elseif basis_der_x>=3
+
+            result=0;
+
+        else 
+
+            warning="wrong input for basis derivative";
+
+        end
+
+    elseif basis_index==3
+
+        if basis_der_x==0
+
+            result=-4*((x-vertices(1))/h)^2+4*((x-vertices(1))/h);
+
+        elseif basis_der_x==1
+
+            result=-8*((x-vertices(1))/h)*(1/h)+4/h;
+
+        elseif basis_der_x==2
+
+            result=-8/h*(1/h);
+
+        elseif basis_der_x>=3
+
+            result=0;
+
+        else 
+
+            warning="wrong input for basis derivative";
+
+        end
+
+    else
+        warning="wrong input for basis index";
+
+    end
 
 end
 

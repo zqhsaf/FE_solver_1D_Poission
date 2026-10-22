@@ -7,5 +7,11 @@ if basis_type==101
     Pb=left:1/N:right;
 
     Tb=[1:N;2:N+1];
+
+elseif basis_type==102
+
+    Pb=left:1/(2*N):right;
+
+    Tb=[1:2:2*N-1;3:2:2*N+1;2:2:2*N];
         
 end
